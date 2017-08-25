@@ -1,1 +1,1 @@
-include ':app', ':mydownm'
+include ':example', ':mydownm'
