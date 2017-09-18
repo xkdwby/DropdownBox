@@ -1,7 +1,10 @@
 package test.mydownm
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.util.DisplayMetrics
+import android.view.WindowManager
 
 /**
  * Created by wby on 2017/8/23.
@@ -34,3 +37,47 @@ fun getShapeDrawable(color: Int, radius: Float, stockWidth: Int? = null, stockCo
     gradientDrawable.setStroke(stockWidth, stockColor, dashWidth, dashGap)
     return gradientDrawable
 }
+
+/**
+ * 获取屏幕高度
+ */
+fun getScreenWidth(context: Context): Int {
+    val wm: WindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val outMetrics = DisplayMetrics()
+    wm.defaultDisplay.getMetrics(outMetrics)
+    return outMetrics.widthPixels
+}
+
+/**
+ * 获取屏幕宽度
+ */
+fun getScreenHeight(context: Context): Int {
+    val wm: WindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val outMetrics = DisplayMetrics()
+    wm.defaultDisplay.getMetrics(outMetrics)
+    return outMetrics.heightPixels
+}
+
+/**
+ * 获得状态栏的高度
+ *
+ * @param context
+ * @return
+ */
+fun getStatusHeight(context: Context): Int {
+
+    var statusHeight = -1
+    try {
+        val clazz = Class.forName("com.android.internal.R\$dimen")
+        val `object` = clazz.newInstance()
+        val height = Integer.parseInt(clazz.getField("status_bar_height")
+                .get(`object`).toString())
+        statusHeight = context.resources.getDimensionPixelSize(height)
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    return statusHeight
+}
+
+
+var heightt:Int=130//一个页面只有一个下拉列表的情况就不会有影响

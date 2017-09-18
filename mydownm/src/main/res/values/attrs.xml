@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="downstyle">
         <attr name="mydownstyle" format="integer" />
+        <attr name="mydownbottomstyle" format="integer" />
     </declare-styleable>
 
 </resources>

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/tmain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="xxxx" />
+        android:text="xxxx"
+        android:textColor="#333531" />
 
     <ImageView
-        android:layout_toRightOf="@id/tmain"
         android:id="@+id/rightimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:src="@mipmap/new_down_gray" />
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@id/tmain"
+        android:src="@drawable/new_down_gray" />
 </RelativeLayout>
