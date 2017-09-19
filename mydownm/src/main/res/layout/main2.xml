@@ -2,19 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center_horizontal">
 
     <TextView
         android:id="@+id/tmain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="xxxx"
+        android:layout_centerVertical="true"
         android:textColor="#333531" />
 
     <ImageView
         android:id="@+id/rightimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="4dp"
         android:layout_toRightOf="@id/tmain"
         android:src="@drawable/new_down_gray" />

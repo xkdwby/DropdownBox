@@ -13,24 +13,26 @@ import org.jetbrains.anko.wrapContent
 /**
  * Created by wby on 2017/8/21.
  */
-class mydown_holder(parent: ViewGroup?) : BaseViewHolder<selected_bean>(parent, R.layout.item) {
+class mydown_holder(parent: ViewGroup?, hei: Float) : BaseViewHolder<selected_bean>(parent, R.layout.item) {
+    var heii = hei
     internal var det: TextView = `$`(R.id.tv)
     internal var under: TextView = `$`(R.id.under)
     internal var dui: ImageView = `$`(R.id.duigou)
 
     override fun setData(data: selected_bean) {
-        Log.d("wby","现在高度$heightt")
-        itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heightt)
+        if (heii == 0f) {
+            itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heightt)
+        } else {
+            itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heii.toInt())
+        }
         det.text = data.mytext
-//        if ()
-
-
+        det.textSize = fontsize
         if (data.selected) {
-            det.setTextColor(Color.parseColor("#333531"))
+            det.setTextColor(textcolor)
             under.setBackgroundColor(Color.parseColor("#333531"))
             dui.visibility = View.VISIBLE
         } else {
-            det.setTextColor(Color.parseColor("#848583"))
+            det.setTextColor(textcolor)
             under.setBackgroundColor(Color.parseColor("#f2f2f2"))
             dui.visibility = View.INVISIBLE
         }

@@ -3,6 +3,7 @@
     <declare-styleable name="downstyle">
         <attr name="mydownstyle" format="integer" />
         <attr name="mydownbottomstyle" format="integer" />
+        <attr name="itemheight" format="dimension" />
     </declare-styleable>
 
 </resources>
