@@ -1,4 +1,4 @@
-package test.mydownm;
+package test.myDropDownBox;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package test.mydownm
+package test.myDropDownBox
 
 import android.graphics.Color
 import android.util.Log
@@ -13,26 +13,37 @@ import org.jetbrains.anko.wrapContent
 /**
  * Created by wby on 2017/8/21.
  */
-class mydown_holder(parent: ViewGroup?, hei: Float) : BaseViewHolder<selected_bean>(parent, R.layout.item) {
+class mydown_holder(parent: ViewGroup?, hei: Int) : BaseViewHolder<selected_bean>(parent, R.layout.item) {
     var heii = hei
     internal var det: TextView = `$`(R.id.tv)
     internal var under: TextView = `$`(R.id.under)
     internal var dui: ImageView = `$`(R.id.duigou)
 
+    var selectedColor:Int= Color.parseColor("#333531")
+    var unSelectedColor:Int= Color.parseColor("#848583")
+    var fontSize:Float?=14f
+
+    fun setSelectedColor(a:Int?){
+        selectedColor=a?:selectedColor
+    }
+
+    fun setUnSelectedColor(b:Int?){
+        selectedColor=b?:unSelectedColor
+    }
+
+    fun fontSize(f:Float?){
+        fontSize=f?:fontSize
+    }
     override fun setData(data: selected_bean) {
-        if (heii == 0f) {
-            itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heightt)
-        } else {
-            itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heii.toInt())
-        }
+        itemView.layoutParams = RelativeLayout.LayoutParams(wrapContent, heii)
         det.text = data.mytext
-        det.textSize = fontsize
+        det.textSize = fontSize!!
         if (data.selected) {
-            det.setTextColor(textcolor)
+            det.setTextColor(selectedColor!!)
             under.setBackgroundColor(Color.parseColor("#333531"))
             dui.visibility = View.VISIBLE
         } else {
-            det.setTextColor(textcolor)
+            det.setTextColor(unSelectedColor!!)
             under.setBackgroundColor(Color.parseColor("#f2f2f2"))
             dui.visibility = View.INVISIBLE
         }

@@ -1,4 +1,4 @@
-package test.mydownm
+package test.myDropDownBox
 
 import android.content.Context
 import android.graphics.Color
@@ -83,8 +83,3 @@ fun dip2px(context: Context, dpValue: Float): Int {
     val scale: Float = context.resources.displayMetrics.density
     return (dpValue * scale + 0.5f).toInt()
 }
-
-
-var heightt:Int=130//一个页面只有一个下拉列表的情况就不会有影响
-var textcolor:Int=Color.parseColor("#848583")//一个页面只有一个下拉列表的情况就不会有影响
-var fontsize:Float=24f//一个页面只有一个下拉列表的情况就不会有影响

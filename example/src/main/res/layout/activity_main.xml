@@ -7,7 +7,7 @@
     android:background="#ff7f50"
     tools:context="test.mydown.MainActivity">
 
-    <test.mydownm.mydown
+    <test.myDropDownBox.DropDownBox
         android:id="@+id/t2"
         android:layout_width="100dp"
         android:layout_height="30dp"
@@ -18,7 +18,7 @@
         app:mydownbottomstyle="1"
         app:mydownstyle="1" />
 
-    <test.mydownm.mydown
+    <test.myDropDownBox.DropDownBox
         android:id="@+id/t1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -29,9 +29,9 @@
         app:mydownbottomstyle="0"
         app:mydownstyle="0" />
 
-    <test.mydownm.mydown
+    <test.myDropDownBox.DropDownBox
         android:id="@+id/t3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"

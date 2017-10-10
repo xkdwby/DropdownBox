@@ -1,8 +1,7 @@
-package test.mydownm
+package test.myDropDownBox
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
 
 import com.jude.easyrecyclerview.EasyRecyclerView
 
